@@ -36,7 +36,8 @@ class DatestampAndView(InterfaceAction):
         custom_columns = db.custom_field_keys()
         # Make sure column exists
         if date_column not in custom_columns: 
-            return error_dialog(self.gui, 'Before running this plugin', 'You need to create a custom Date column called %s '%date_column, show=True)
+            return error_dialog(self.gui, 'Before running this plugin', 
+                    'You need to create a custom Date column called %s '%date_column, show=True)
         label = db.field_metadata.key_to_label(date_column)
         # Get selected row(s)
         rows = self.gui.library_view.selectionModel().selectedRows()
